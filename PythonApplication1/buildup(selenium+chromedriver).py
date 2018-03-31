@@ -68,8 +68,14 @@ def sortHtml2obj():
 def reloadhtml():
     #driver.get('https://52.48.89.151:16871/Sportsbook/Asia/zh-CN/Bet/E%20Sports/All%20Games/Double/null/0/Regular/SportsBookAll/Decimal/7/#tab=Menu&sport=/Sportsbook/Asia/zh-CN/GetLines/E%20Sports/All%20Games/1/null/0/Regular/SportsBookAll/Decimal/7/false/')
     driver.get('https://52.48.89.151:16871/Sportsbook/Asia/en-GB/Bet/E%20Sports/All%20Games/Double/null/0/Regular/SportsBookAll/Decimal/7/#tab=Menu&sport=/Sportsbook/Asia/en-GB/GetLines/E%20Sports/All%20Games/1/null/0/Regular/SportsBookAll/Decimal/7/false/')#英文版
-    WebDriverWait(driver,10,0.5).until(expected_conditions.presence_of_element_located((By.XPATH,"//*[@id='AvailableBalance']/tbody/tr/td[2]/a[1]")))
-    pull2bottom()
+    sleep(3)
+
+    #flag=WebDriverWait(driver,10,0.5).until(expected_conditions.presence_of_element_located((By.XPATH,"//*[@id='menuSport_12']/a")))
+    #print(flag)
+    try:WebDriverWait(driver,1,0.5).until(expected_conditions.presence_of_element_located((By.XPATH,"//*[@id='13']/div[1]/h2")))
+    except BaseException as e: 
+    else:pull2bottom()
+    
 def weakreloadhtml():
     driver.execute_script("document.getElementById('Today_12').getElementsByClassName('market_header')[0].getElementsByClassName('puls')[0].getElementsByTagName('a')[0].click()")
     driver.execute_script("document.getElementById('Early_12').getElementsByClassName('market_header')[0].getElementsByClassName('puls')[0].getElementsByTagName('a')[0].click()")

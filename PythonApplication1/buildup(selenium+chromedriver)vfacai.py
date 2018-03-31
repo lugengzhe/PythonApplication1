@@ -16,7 +16,7 @@ def login():
     username = 'CZ868895'
     password = '@Zcd1992'
     url='https://www.vfacai.com/index.html#/gb_sports'
-    url='https://msp2.vfacai.com/Sports/Asia/Index.aspx?tpid=001&token=c9a59306b21ec3283918bfc53888f1294c781ace43b9521c3c3cc49c7c545058d228dd4ec69e1d2413fa7cb6dc43282dce406bdb3409e525f3bd683849647e8de4854aaa2ba50478920af4659dbf4374a135399cbf7bd7b7884eb3cf12940e28&languagecode=zh-cn&guest=login&oddstype=00001&sc='
+    #url='https://msp2.vfacai.com/Sports/Asia/Index.aspx?tpid=001&token=c9a59306b21ec3283918bfc53888f1294c781ace43b9521c3c3cc49c7c545058d228dd4ec69e1d2413fa7cb6dc43282dce406bdb3409e525f3bd683849647e8de4854aaa2ba50478920af4659dbf4374a135399cbf7bd7b7884eb3cf12940e28&languagecode=zh-cn&guest=login&oddstype=00001&sc='
     driver.set_window_size(480, 760)
     driver.get(url)#这一步特别缓慢 不全加载完
     WebDriverWait(driver,10,0.5).until(expected_conditions.presence_of_element_located((By.XPATH,"//*[@id='nav']/div[2]/a")))
